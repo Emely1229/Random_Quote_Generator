@@ -24,7 +24,7 @@ const colors = [
    `(255,255,186)`,
    `(186,255,201)`,
   `(186,255,255)`
-]
+];
 console.log(colors);
 //shows array of colors within the console
 
@@ -110,4 +110,4 @@ console.log(reloadColor());
 document.getElementById("load-quote").addEventListener("click", function() {
   //sets the function printQuote() onto the "load-quote" which is the button to get a new quote
         document.getElementById('quote-box').innerHTML = printQuote();
-    });
+    })
