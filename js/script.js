@@ -80,11 +80,10 @@ function printQuote() {
   //this will return the whole html line that has been added onto, without this the html won't return back. It will also run the reloadingcolor function
 }
 
-window.setInterval(`printQuote()`, 10000);
-//runs the printQuote function which loads a new quote and color every 10 seconds
-
-document.getElementById('quote-box').innerHTML = printQuote();
-//displays the html line created in the 'quote-box' onto the webpage
+window.setInterval(() => {
+  document.getElementById('quote-box').innerHTML = printQuote();
+}, 10000);
+//displays the html line created in the 'quote-box' onto the webpage and runs printQuote every 10 seconds
 
 /***
  * click event listener for the print quote button
