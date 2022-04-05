@@ -65,6 +65,7 @@ h1 {
   position: relative;
   margin: 0;
   margin-left: 10px;
+  font-family: 'Grape Nuts', cursive;
 }
 
 .quote:before,
