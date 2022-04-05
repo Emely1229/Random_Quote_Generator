@@ -83,6 +83,9 @@ function printQuote() {
 window.setInterval('refresh()', 10000);
 //this will set the function refresh which will refresh the page to every 10 seconds or 10000 milliseconds
 
+window.setInterval('reloadColor()',10000);
+//will set the function reloadColor() to every 10 seconds and change the color to a random background-color
+
 function refresh() {
   //this function will make the window reload
        window .location.reload();
@@ -96,11 +99,14 @@ document.getElementById('quote-box').innerHTML = printQuote();
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-let randomColor = getRandomColor();
 
-console.log(randomColor);
-
-
+function reloadColor() {
+  getRandomColor();
+  document.body.style.backgroundColor = `rgb${getRandomColor()}`;
+}
+//creates line of code for background-color
+console.log(reloadColor());
+//changes the background color of the body
 document.getElementById("load-quote").addEventListener("click", function() {
   //sets the function printQuote() onto the "load-quote" which is the button to get a new quote
         document.getElementById('quote-box').innerHTML = printQuote();
