@@ -63,7 +63,9 @@ function printQuote() {
   //puts the quote into paragraphs
   html += `<p class="source">` +printRandomQuote.source;
   //puts the quote source under the quote in another paragraph
-
+  if ("citation" in printRandomQuote) {
+    html+= '<span class="citation">' + printRandomQuote.citation + `</span>`;
+  }
   if ("year" in printRandomQuote) {
     html += `<span class="year">` + printRandomQuote.year + `</span>`+`</p>`;
     //if the object contains a year property it will include that as well
