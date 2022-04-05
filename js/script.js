@@ -55,42 +55,31 @@ function printQuote() {
   //creates a function that grabs the random generated quote and sets each section of it
   let html =``;
   //creates html variable
+  reloadColor();
+    // runs the reloadColor Function
   let printRandomQuote = getRandomQuote();
   //creates variable printRandomQuote which runs the random quote generator function
   html += `<p class="quote">` + printRandomQuote.quote + `</p>`;
   //puts the quote into paragraphs
   html += `<p class="source">` +printRandomQuote.source;
   //puts the quote source under the quote in another paragraph
-  if ("citation" in printRandomQuote) {
-    html += `<span class="citation">` + printRandomQuote.citation + `</span>`;
-  }
-  //if the object contains a citation property it will include that as well
+
   if ("year" in printRandomQuote) {
     html += `<span class="year">` + printRandomQuote.year + `</span>`+`</p>`;
     //if the object contains a year property it will include that as well
   }
   if ("section" in printRandomQuote) {
-    html += `<p>` + `<span class="section">` + printRandomQuote.section + `</span>` ;
+    html += `<p>` + `<span class="section">` + printRandomQuote.section + `</span>`;
   }
   if ("tag" in printRandomQuote) {
-    html +=  `<span class="tag">` + printRandomQuote.tag + `</span>`+`</p>`;
+    html +=  `<span class="tag">` + printRandomQuote.tag + `</span>`;
   }
-
   return html;
-  //this will return the whole html line that has been added onto, without this the html won't return back
+  //this will return the whole html line that has been added onto, without this the html won't return back. It will also run the reloadingcolor function
 }
 
-window.setInterval('refresh()', 10000);
-//this will set the function refresh which will refresh the page to every 10 seconds or 10000 milliseconds
-
-window.setInterval('reloadColor()',10000);
-//will set the function reloadColor() to every 10 seconds and change the color to a random background-color
-
-function refresh() {
-  //this function will make the window reload
-       window .location.reload();
-
-   }
+window.setInterval(`printQuote()`, 10000);
+//runs the printQuote function which loads a new quote and color every 10 seconds
 
 document.getElementById('quote-box').innerHTML = printQuote();
 //displays the html line created in the 'quote-box' onto the webpage
